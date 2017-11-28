@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\Scripts\app.ts" />
+    <None Remove="Resources\Scripts\Pages\contact.ts" />
+    <None Remove="Resources\Scripts\Services\validator.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Resources\Scripts\app.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Pages\contact.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\Services\validator.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\External\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,65 @@
+@{
+    var title = "Trekking for Charity";
+    if (ViewBag.Title != null)
+    {
+        title += $" - {ViewBag.Title}";
+    }
+
+}
+<html>
+<head>
+    <title>@title</title>
+    <link href="~/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="navbar is-light">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-weight-bold" href="#"><img src="~/images/logo-small.png"></a>
+
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-start">
+                    <a class="navbar-item">Sign Up</a>
+                    <a href="/secondary.html" class="navbar-item">Explore</a>
+                </div>
+                <div class="navbar-end">
+                    <a href="#" class="navbar-item">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        @RenderBody() 
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="has-text-left">&copy; Trekking for Charity 2017</div>
+                </div>
+                <div class="column">
+                    <div class="has-text-centered">
+                        <a asp-page="/TermsAndPrivacy">Legal Stuff</a> | <a asp-page="/contact">Contact</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="has-text-right">
+                        <a href="#"><span class="icon-facebook"></span></a>
+                        <a href="#"><span class="icon-twitter"></span></a>
+                        <a href="#"><span class="icon-github"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="/app.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>
