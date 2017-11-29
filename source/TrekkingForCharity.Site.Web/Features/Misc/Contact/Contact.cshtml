@@ -1,0 +1,68 @@
+﻿@model TrekkingForCharity.Site.Web.Features.Misc.Contact.ContactModel
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<section class="hero is-dark is-medium">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">Hero title</h1>
+            <h2 class="subtitle">Hero subtitle</h2>
+        </div>
+    </div>
+</section>
+<section class="section" id="app">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <form method="post" id="contact-form">
+                    <div class="field">
+                        <label asp-for="Name" class="label is-inline-block"></label>
+                        <span asp-validation-for="Name" class="help is-pulled-right"></span>
+                        <div class="control">
+                            <input asp-for="Name" class="input" type="text" placeholder="Text input">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label asp-for="EmailAddress" class="label is-inline-block"></label>
+                        <span asp-validation-for="EmailAddress" class="help is-pulled-right"></span>
+                        <p class="control">
+                            <input asp-for="EmailAddress" class="input" type="email" placeholder="Email input">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label asp-for="Message" class="label is-inline-block">Message</label>
+                        <span asp-validation-for="Message" class="help is-pulled-right"></span>
+                        <p class="control">
+                            <textarea asp-for="Message" class="textarea" placeholder="Textarea"></textarea>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <button class="button is-primary">Submit</button>
+                        </p>
+                    </div>
+                </form>
+
+            </div>
+            <div class="column">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
+                    <ul style="list-style: none;">
+                        <li><a href="https://www.facebook.com/CharityTreks/"><span class="icon-facebook"></span>CharityTreks</a></li>
+                        <li><a href="https://twitter.com/@@charitytreks"><span class="icon-twitter"></span>@@charitytreks</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts
+    {
+    <script src="/contact.js"></script>
+}

@@ -286,3 +286,9 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+.vscode/**
+**/wwwroot/**
+**/Resources/Scripts/**/*.js
+**/Resources/Scripts/**/*.js.map
+**/appsettings.*.json

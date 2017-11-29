@@ -1,0 +1,81 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Home page";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Trekking for Charity</title>
+    <link href="~/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="splash">
+    <section class="hero is-fullheight is-success has-no-background">
+        <div class="hero-head">
+            <nav class="navbar is-transparent has-no-background">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <div class="navbar-burger burger" data-target="navMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="navbar-menu" id="navMenu">
+                        <div class="navbar-start">
+                            <a class="navbar-item">Sign Up</a>
+                            <a asp-page="/explore" class="navbar-item">Explore</a>
+                        </div>
+                        <div class="navbar-end">
+                            <a asp-action="SignIn" asp-controller="Authentication" class="navbar-item">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-offset-one-third is-one-third has-text-centered">
+                        <img src="~/images/logo-home.png" alt="Logo">
+                        <br /><br />
+                        <h1 class="title">
+                            Walk, Run, Ride - Share it all
+                        </h1>
+                        <h2 class="subtitle">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                        </h2>
+                        <a class="button is-primary is-inverted is-outlined is-large">Get Started</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="hero-foot">
+            <footer class="footer has-no-background">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="has-text-left">&copy; Trekking for Charity @DateTime.Now.Year</div>
+                        </div>
+                        <div class="column">
+                            <div class="has-text-centered">
+                                <a asp-controller="Privacy" asp-action="TermsAndPrivacy">Legal Stuff</a> | <a asp-action="Contact" asp-controller="Contact">Contact</a>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="has-text-right">
+                                <a href="#"><span class="icon-facebook"></span></a>
+                                <a href="#"><span class="icon-twitter"></span></a>
+                                <a href="#"><span class="icon-github"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+</body>
+</html>
