@@ -1,0 +1,47 @@
+﻿@model TrekkingForCharity.Site.Web.Features.Shared.Components.MainMenu.MainMenuModel
+<nav class="navbar is-light">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-weight-bold" href="#"><img src="~/images/logo-small.png"></a>
+
+            <div class="navbar-burger burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a class="navbar-item">Sign Up</a>
+                <a href="/secondary.html" class="navbar-item">Explore</a>
+            </div>
+            <div class="navbar-end">
+                @if (Model.IsAuthenticated)
+                {
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Hi Andrew
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                My Treks
+                            </a>
+                            <hr class="navbar-divider">
+                            <a asp-controller="Authentication" asp-action="SignOut" class="navbar-item">
+                                Sign Out
+                            </a>
+                        </div>
+                    </div>    
+                }
+                else
+                {
+                    <a asp-action="SignIn" asp-controller="Authentication" class="navbar-item">Sign In</a>    
+                }
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>

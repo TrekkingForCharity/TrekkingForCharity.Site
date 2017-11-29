@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -12,7 +14,8 @@ namespace TrekkingForCharity.Site.Web.Authentication
         [Route("~/sign-in")]
         public async Task SignIn(string returnUrl = "/")
         {
-            await this.HttpContext.ChallengeAsync("Auth0", new AuthenticationProperties { RedirectUri = returnUrl });
+            //await this.HttpContext.ChallengeAsync("Auth0", new AuthenticationProperties { RedirectUri = returnUrl });
+            await this.HttpContext.SignInAsync(new ClaimsPrincipal(new List<ClaimsIdentity>()));
         }
 
         [Authorize]

@@ -28,10 +28,7 @@ namespace TrekkingForCharity.Site.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services
-            .AddMvc()
-            .AddRazorPagesOptions(options => {
-                options.Conventions.AddPageRoute("/TermsAndPrivacy", "terms-and-privacy");
-            });
+            .AddMvc().AddFeatureFolders();
             services.Configure<AuthenticationSettings>(this.Configuration.GetSection("auth0"));
             services.Configure<DoorbellSettings>(this.Configuration.GetSection("doorbell"));
             

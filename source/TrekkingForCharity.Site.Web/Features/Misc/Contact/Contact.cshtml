@@ -1,5 +1,8 @@
-﻿@page
-@model TrekkingForCharity.Site.Web.Pages.ContactModel
+﻿@model TrekkingForCharity.Site.Web.Features.Misc.Contact.ContactModel
+@{
+    Layout = "_Layout";
+}
+
 @{
     ViewData["Title"] = "Contact";
 }
@@ -16,27 +19,26 @@
     <div class="container">
         <div class="columns">
             <div class="column is-two-thirds">
-                <span>{{message}}</span>
                 <form method="post" id="contact-form">
                     <div class="field">
-                        <label asp-for="Contact.Name" class="label is-inline-block"></label>
-                        <span asp-validation-for="Contact.Name" class="help is-pulled-right"></span>
+                        <label asp-for="Name" class="label is-inline-block"></label>
+                        <span asp-validation-for="Name" class="help is-pulled-right"></span>
                         <div class="control">
-                            <input asp-for="Contact.Name" class="input" type="text" placeholder="Text input">
+                            <input asp-for="Name" class="input" type="text" placeholder="Text input">
                         </div>
                     </div>
                     <div class="field">
-                        <label asp-for="Contact.EmailAddress" class="label is-inline-block"></label>
-                        <span asp-validation-for="Contact.EmailAddress" class="help is-pulled-right"></span>
+                        <label asp-for="EmailAddress" class="label is-inline-block"></label>
+                        <span asp-validation-for="EmailAddress" class="help is-pulled-right"></span>
                         <p class="control">
-                            <input asp-for="Contact.EmailAddress" class="input" type="email" placeholder="Email input">
+                            <input asp-for="EmailAddress" class="input" type="email" placeholder="Email input">
                         </p>
                     </div>
                     <div class="field">
-                        <label asp-for="Contact.Message" class="label is-inline-block">Message</label>
-                        <span asp-validation-for="Contact.Message" class="help is-pulled-right"></span>
+                        <label asp-for="Message" class="label is-inline-block">Message</label>
+                        <span asp-validation-for="Message" class="help is-pulled-right"></span>
                         <p class="control">
-                            <textarea asp-for="Contact.Message" class="textarea" placeholder="Textarea"></textarea>
+                            <textarea asp-for="Message" class="textarea" placeholder="Textarea"></textarea>
                         </p>
                     </div>
                     <div class="field">
@@ -61,6 +63,6 @@
     </div>
 </section>
 @section Scripts
-{
+    {
     <script src="/contact.js"></script>
 }

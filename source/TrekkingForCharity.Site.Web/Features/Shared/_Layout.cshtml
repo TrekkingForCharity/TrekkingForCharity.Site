@@ -1,0 +1,43 @@
+﻿@{
+    var title = "Trekking for Charity";
+    if (ViewBag.Title != null)
+    {
+        title += $" - {ViewBag.Title}";
+    }
+
+}
+<html>
+<head>
+    <title>@title</title>
+    <link href="~/style.css" rel="stylesheet" />
+</head>
+<body>
+    @await Component.InvokeAsync("MainMenu")
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="has-text-left">&copy; Trekking for Charity 2017</div>
+                </div>
+                <div class="column">
+                    <div class="has-text-centered">
+                        <a asp-controller="Privacy" asp-action="TermsAndPrivacy">Legal Stuff</a> | <a asp-action="Contact" asp-controller="Contact">Contact</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="has-text-right">
+                        <a href="#"><span class="icon-facebook"></span></a>
+                        <a href="#"><span class="icon-twitter"></span></a>
+                        <a href="#"><span class="icon-github"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/app.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>
