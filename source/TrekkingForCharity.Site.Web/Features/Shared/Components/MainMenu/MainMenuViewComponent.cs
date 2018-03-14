@@ -11,7 +11,7 @@ namespace TrekkingForCharity.Site.Web.Features.Shared.Components.MainMenu
         public IViewComponentResult Invoke()
         {
             var model = new MainMenuModel();
-            model.IsAuthenticated = true;
+            model.IsAuthenticated = this.HttpContext.User.Identity.IsAuthenticated;
             return View(model);
         }
     }

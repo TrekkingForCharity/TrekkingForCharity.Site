@@ -8,7 +8,9 @@ namespace TrekkingForCharity.Site.Web.Features.Profile
 {
     public class ProfileController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        [Route("~/me/treks")]
+        public IActionResult MyTreks()
         {
             return View();
         }
